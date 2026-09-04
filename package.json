@@ -1,0 +1,54 @@
+{
+  "name": "belge-transfer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node --env-file=.env.local server/index.js",
+    "dev:all": "concurrently -k -n WEB,API -c cyan,magenta \"vite\" \"node --env-file=.env.local server/index.js\"",
+    "db:migrate": "node --env-file=.env.local server/db/migrate.js",
+    "build": "node scripts/build-production.mjs",
+    "lint": "oxlint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@neondatabase/neon-js": "^0.6.2-beta",
+    "@neondatabase/serverless": "^1.1.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "fflate": "^0.8.3",
+    "google-auth-library": "^11.0.0",
+    "helmet": "^8.3.0",
+    "jose": "^6.2.8",
+    "jsqr": "^1.4.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zod": "^4.4.3",
+    "zxing-wasm": "3.1.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
+    "@vitejs/plugin-react": "^6.0.4",
+    "concurrently": "^10.0.4",
+    "fake-indexeddb": "6.2.5",
+    "jsdom": "^29.1.1",
+    "oxlint": "^1.75.0",
+    "supertest": "^7.2.2",
+    "vite": "^8.2.0",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "better-auth": "1.6.26",
+    "@better-auth/passkey": "1.6.26"
+  }
+}
